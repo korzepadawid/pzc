@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"time"
 )
 
@@ -26,7 +27,8 @@ func main() {
 		w.Write([]byte(html))
 	})
 
-	if err := http.ListenAndServe(":8080", nil); err != nil {
+	port, _ := os.LookupEnv("PORT")
+	if err := http.ListenAndServe(":"+port, nil); err != nil {
 		log.Fatal(err)
 	}
 }
