@@ -7,8 +7,6 @@ import (
 	"time"
 )
 
-const ()
-
 func main() {
 	template := `
 <html>
